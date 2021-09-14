@@ -1,0 +1,105 @@
+<ion-header class="">
+    <ion-toolbar class="headblue">
+        <ion-item class="headblue" lines="none">
+            <ion-buttons>
+                <ion-menu-button class="menubtn" menu="first"></ion-menu-button>
+            </ion-buttons>
+            <ion-title>Dashboard</ion-title>
+            <div class="profileheader">
+                <ion-icon class="headicon1" slot="end"
+                    name="notifications-outline" (click)="openNotifications()"></ion-icon>
+            </div>
+        </ion-item>
+    </ion-toolbar>
+</ion-header>
+
+<div class="bg-dashboard">
+    <div class="empdata">
+        <ion-grid >
+            <ion-row style="margin-top: 10px;">
+            <ion-col size="5">
+                <ion-avatar class="image-center" *ngIf="!profilePic">
+                    <img src="assets/image/profile.png">
+                </ion-avatar>
+                <ion-avatar class="image-center" *ngIf="profilePic">
+                    <img src="{{profilePic}}">
+                </ion-avatar>
+            </ion-col>
+            <ion-col size="7">
+                <p>EMP CODE: {{ empCode }}</p>
+                <p style="color: yellow;"> {{ empName | uppercase}}</p>
+                <p>{{ degignation }}</p>
+                
+            </ion-col>
+        </ion-row>
+        </ion-grid>
+
+        <!-- <ion-avatar class="image-center" (click)="modallll()">
+            <img src="profilePic">
+        </ion-avatar> -->
+        
+        
+            <!-- Class:&nbsp;6 th&nbsp;A&nbsp;23456</p> -->
+        </div>
+    </div>
+    <div class="bg-dash-white">
+        <div class="menu-inner-div">
+            <ion-row>
+                <ion-col *ngFor="let Menu of menuList" size="6"
+                    routerLink="{{Menu.pageRoute}}">
+                    <div class="new-menu">
+                        <div>
+                            <img src="{{Menu.icons}}" class="imgcon-new">
+                        </div>
+                        <p>{{Menu.menuName}} </p>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </div>
+    </div>
+    <!-- <div class="bg-dash-white">
+        <div class="menu-inner-div">
+            <ion-row>
+                <ion-col size="6" routerLink="/profile">
+                    <div class="new-menu">
+                        <div>
+                            <img src="assets/image/profile.png" class="imgcon-new">
+                        </div>
+                        <p>Profile</p>
+                    </div>
+                </ion-col>
+                <ion-col size="6">
+                    <div class="new-menu">
+                        <div>
+                            <img src="assets/image/attendance.png" class="imgcon-new">
+                        </div>
+                        <p>My Attendance</p>
+                    </div>
+                </ion-col>
+                <ion-col size="6" (click)="CheckInButtonClick()">
+                    <div class="new-menu">
+                        <div>
+                            <img src="assets/image/checkin.png" class="imgcon-new">
+                        </div>
+                        <p>Check In</p>
+                    </div>
+                </ion-col>
+                <ion-col size="6">
+                    <div class="new-menu">
+                        <div>
+                            <img src="assets/image/sal.png" class="imgcon-new">
+                        </div>
+                        <p>Salary</p>
+                    </div>
+                </ion-col>
+                <ion-col size="6">
+                    <div class="new-menu">
+                        <div>
+                            <img src="assets/image/helpdesk.png" class="imgcon-new">
+                        </div>
+                        <p>Helpdesk</p>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </div>
+    </div> -->

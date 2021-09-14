@@ -1,0 +1,69 @@
+<ion-header class="">
+    <ion-toolbar class="headblue">
+        <ion-item class="headblue" lines="none">
+            <ion-buttons>
+                <ion-menu-button class="menubtn" menu="first"></ion-menu-button>
+            </ion-buttons>
+            <ion-title>My Attendance</ion-title>
+            <div class="profileheader">
+                <ion-icon class="headicon1" slot="end"
+                    name="notifications-outline" (click)="openNotifications()"></ion-icon>
+            </div>
+        </ion-item>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <h3 style="margin-left: 10px; color: #297c9d;">Select Date Between</h3>
+    <div>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <mat-form-field appearance="outline" class="datepicker">
+                        <mat-date-range-input [rangePicker]="picker">
+                            <input matStartDate placeholder="Start date"
+                                [(ngModel)]="startDate">
+                            <input matEndDate placeholder="End date"
+                                [(ngModel)]="endDate">
+                        </mat-date-range-input>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-date-range-picker #picker></mat-date-range-picker>
+                    </mat-form-field>
+                </ion-col>
+                <ion-col>
+                    <ion-button icon-only style="--background: #297c9d; height: 48px;" (click)="getReport()">
+                        <ion-icon class="search-icon" name="search"></ion-icon>
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+
+    </div>
+    <div class="containers table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Check In</th>
+                    <th>Check Out</th>
+                    <th>Shift</th>
+                    <th>Late Remarks</th>
+                    <th>Early Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of attendanceListData;">
+                    <td>{{data.inTime | date:'d-MMM-y, h:mm a'}}</td>
+                    <td>{{data.outTime | date:'d-MMM-y, h:mm a'}}</td>
+                    <td>{{data.shiftName}}</td>
+                    <td>{{data.late_IN_Mint}}</td>
+                    <td>{{data.early_OUT_Mint}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="!attendanceListData">
+        <img src="assets/image/nonotification.png">
+    </div>
+</ion-content>

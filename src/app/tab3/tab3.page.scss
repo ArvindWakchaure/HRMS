@@ -1,0 +1,69 @@
+* {
+    font-family: 'Poppins-Regular';
+  
+  }
+
+ion-item {
+    ion-label {
+        p {
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+        }
+        ion-icon {
+            font-size: 20px;
+            color: gray;
+        }
+    }
+}
+
+ion-item {
+    ion-button {
+        color: white;
+        font-size: 20px;
+    }
+    ion-icon {
+        color: white;
+        font-size: 20px;
+    }
+    ion-label {
+        p {
+            color: white;
+            font-size: 20px;
+        }
+    }
+}
+
+table {
+    width: 100%;
+    td {
+      font-size: 12px;
+      // padding-left: 0px;
+      // padding-right: 1px;
+    }
+  }
+  .containers {
+    padding-right: 5px;
+      padding-left: 5px;
+      margin-right: auto;
+      margin-left: auto;
+  }
+  thead {
+    background: #297c9d !important;
+      color: white !important;
+  }
+  .search-icon {
+    padding: 9px 5px;
+  }
+
+  //input outline color
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #297c9d!important;
+    // opacity: 1!important;
+}
+
+//mat-input focused color
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #297c9d!important;
+}

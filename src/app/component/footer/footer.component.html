@@ -1,0 +1,34 @@
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button (click)="GotoPage('dashboard')">
+
+
+
+      <ion-icon name="home"></ion-icon>
+
+      <ion-label>Home
+        <!-- {{sidemenu.name} -->
+      </ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="GotoPage('profile')">
+      <ion-icon name="person"></ion-icon>
+
+      <ion-label>profile</ion-label>
+    </ion-tab-button>
+
+
+    <ion-tab-button (click)="GotoPage('liveclasses')">
+      <ion-icon name="tv"></ion-icon>
+
+      <ion-label>Live-classes</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="GotoPage('smsbox')">
+      <ion-icon name="chatbox-ellipses"></ion-icon>
+
+      <ion-label>notification</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

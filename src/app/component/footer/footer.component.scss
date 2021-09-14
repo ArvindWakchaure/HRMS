@@ -1,0 +1,36 @@
+* {
+    font-family: 'Poppins-Regular';
+  
+  }
+.ftr-ul-menu{
+    padding: 0px;
+    margin-top: 8px;
+}
+.ftr-ul-menu >li{    
+    width: 25%;
+    height: 45px;
+    display: inline-block;
+    text-align: center;
+    ion-icon{
+        display: -webkit-inline-box;
+        font-size: 20px;
+    }
+    ion-label{
+        font-size: 14px;
+        color: white;
+    }
+}
+ion-tab-button{
+    ion-ripple-effect{
+        color: white;
+    }
+}
+ion-tab-bar{
+    // --background: #4850A4;
+    --background:#007c9d;
+    ion-label{
+        color: white;
+        text-transform: capitalize;
+       
+    }
+  }

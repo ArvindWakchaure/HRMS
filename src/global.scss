@@ -1,0 +1,112 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+
+/* Core CSS required for Ionic components to work properly */
+
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('./assets/Poppins/Poppins-Regular.ttf');
+  }
+  
+svg.iconify.iconify {
+    font-size: 26px;
+    color: #fff;
+}
+.check-out {
+    --background: #de2d16;
+  }
+  .check-in {
+    --background: #5ff30b;
+  }
+.headblue{
+    // --background:#3a66fd;
+    --background:#007c9d;
+   }
+   ion-title {
+       color: #ffffff;
+   }
+   ion-back-button {
+    color: #ffffff;
+   }
+
+   .headicon1 {
+    font-size: 20px;
+}
+.menubtn {
+    margin-left: -14px;
+    color: white;
+}
+
+ion-tab-button[aria-selected = true] {
+    height: 100px;
+    color: #fff;
+}
+
+// .mat-form-field-appearance-outline .mat-form-field-flex {
+//   padding: 0 .75em 0 .75em;
+//   margin-top: -0.25em;
+//   position: relative;
+//   border: 1px solid #297c9d;
+// }
+// .mat-form-field-appearance-outline .mat-form-field-outline-start, .mat-form-field-appearance-outline .mat-form-field-outline-end {
+//   border: 1px solid #297c9d !important; 
+//   // border-left-style: none;
+//   min-width: 5px;
+// }
+
+// .mat-form-field-appearance-outline .mat-form-field-outline-end {
+//   border-radius: 0 5px 5px 0;
+ 
+//   flex-grow: 1;
+// }
+// mat-form-field.datepicker.mat-form-field-appearance-legacy .mat-form-field-underline {
+//     background-color: unset !important; 
+// }
+// .datepicker {
+//   margin-top: 3px;
+//     border: 1px solid;
+//     height: 45px;
+//     padding: 0px 10px;
+// }
+
+mat-form-field.datepicker.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-datepicker-toggle-default-icon, .mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-datepicker-toggle-default-icon {
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+  color: #297c9d;
+}
+mat-form-field.datepicker.mat-form-field-outline.mat-form-field-outline-thick.ng-tns-c207-0.ng-star-inserted {
+  border: 1px solid #297c9d!important;
+}
+// mat-form-field.datepicker .mat-form-field-appearance-outline .mat-form-field-outline-start, .mat-form-field-appearance-outline .mat-form-field-outline-end {
+//   border: 1px solid transparent!important;
+// }
+mat-form-field.datepicker.mat-form-field-outline.ng-tns-c207-0.ng-star-inserted {
+  border: 1px solid #297c9d !important;
+}

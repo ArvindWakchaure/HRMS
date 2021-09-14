@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar class="headblue">
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="tabs"></ion-back-button>
+        </ion-buttons>
+    <ion-title>Notifications</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="notifications.length != 0">
+      <div *ngIf="let data of notifications;">
+
+      </div>
+  </div>
+
+<div *ngIf="notifications.length == 0">
+  <img src="assets/image/nonotification.png">
+</div>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "HRMS_Plus",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

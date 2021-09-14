@@ -1,0 +1,21 @@
+
+<ion-header class="">
+    <ion-toolbar class="headblue">
+        <ion-item class="headblue" lines="none">
+            <ion-buttons>
+                <ion-menu-button class="menubtn" menu="first"></ion-menu-button>
+            </ion-buttons>
+            <ion-title>Attendance Punch</ion-title>
+            <div class="profileheader">
+                <ion-icon class="headicon1" slot="end"
+                    name="notifications-outline" (click)="openNotifications()"></ion-icon>
+            </div>
+        </ion-item>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <div >
+        <img src="assets/image/nonotification.png">
+      </div>
+</ion-content>

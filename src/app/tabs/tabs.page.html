@@ -1,0 +1,34 @@
+<ion-content>
+    <ion-fab color="danger" vertical="bottom" horizontal="center" slot="fixed">
+            <!-- [ngClass]="showbutton? 'check-out': 'check-in'" -->
+        <ion-fab-button (click)="checkIn()" *ngIf="showbutton == 'true'"  >
+                <ion-icon name="finger-print-outline" [ngClass]="{'check-in':showbutton === 'true'}"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button (click)="checkIn()" *ngIf="showbutton == 'false'" >
+            <ion-icon name="finger-print-outline" [ngClass]="{'check-out':showbutton === 'false'}"></ion-icon>
+    </ion-fab-button>
+      </ion-fab>
+</ion-content>
+<ion-tabs>
+
+    <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="tab1">
+                <ion-icon name="home-outline"></ion-icon>
+            <!-- <span class="iconify"  data-icon="mdi:home-account"></span> -->
+            <ion-label>Home</ion-label>
+        </ion-tab-button>
+
+        <!-- <ion-tab-button tab="tab2">
+                <span class="iconify"  data-icon="mdi:passport-biometric"></span>
+                <ion-label>Check In</ion-label>
+        </ion-tab-button> -->
+       
+
+        <ion-tab-button tab="tab3">
+                <ion-icon name="receipt-outline"></ion-icon>
+                <!-- <span class="iconify"  data-icon="fluent:clipboard-bullet-list-rtl-16-regular"></span> -->
+                <ion-label>My Attendance</ion-label>
+    </ion-tab-button>
+    </ion-tab-bar>
+
+</ion-tabs>

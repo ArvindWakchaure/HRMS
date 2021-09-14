@@ -1,0 +1,105 @@
+<!-- <ion-header>
+  <ion-toolbar class="headblue">
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="tabs"></ion-back-button>
+        </ion-buttons>
+    <ion-title>CheckIn</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-header class="">
+  <ion-toolbar class="headblue">
+      <ion-item class="headblue" lines="none">
+          <ion-buttons>
+              <ion-menu-button class="menubtn" menu="first"></ion-menu-button>
+          </ion-buttons>
+          <ion-title>CheckIn</ion-title>
+          <!-- <div class="profileheader">
+              <ion-icon class="headicon1" slot="end"
+                  name="notifications-outline" (click)="openNotifications()"></ion-icon>
+          </div> -->
+      </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="bg-dashboard">
+    <div>
+        <ion-avatar class="image-center" *ngIf="!profilePic">
+            <img src="assets/image/profile.png">
+        </ion-avatar>
+        <ion-avatar class="image-center" *ngIf="profilePic">
+            <img src="{{profilePic}}">
+        </ion-avatar>
+        <h1> {{ empName }}</h1>
+           <p>EMP CODE:&nbsp;{{empCode}}&nbsp;</p>
+           <!-- <p>Designation:&nbsp;{{degignation}}&nbsp;</p>
+           <p> Department:&nbsp;{{department}}&nbsp;</p> -->
+           
+           
+        </div>
+        <!-- <div class="checkinTime" *ngIf="checkedinOn">
+          <p><span>Checked in On :</span>{{checkedinOn}}</p>
+        </div> -->
+        <!-- <div class="checkinTime" *ngIf="checkedoutOn">
+            <p><span>Checked out On :</span>{{checkedoutOn}}</p>
+          </div> -->
+        
+        <div class="checkinTime" *ngIf="errorMessage">
+          <p><span>Message :</span> {{errorMessage}}</p>
+        </div>
+        <div class="checkInBtn" (click)="CreateAttendance()" *ngIf="showbutton== true">
+          <ion-button color="success">Check In</ion-button>
+         
+        </div>
+        <div class="checkInBtn" (click)="makeAttendanceCheckOut()" *ngIf="showbutton== false">
+          <ion-button color="danger" >Check Out</ion-button>
+          
+        </div>
+    </div>
+    <!-- <div class="container table-responsive">
+      <h3>YOUR RECENT ACTIVITY</h3>
+      <table class="table table-bordered">
+          <tr class="table-bordered">
+            <th>Check In</th>
+            <th>Check Out</th>
+            <th>Shift</th>
+            <th>Late Remarks</th>
+            <th>Early Remarks</th>
+          </tr>
+          <tr *ngFor="let data of attendanceListData;" class="table-bordered">
+            <td>{{data.inTime | date:'d-MMM-y, h:mm a'}}</td>
+            <td>{{data.outTime | date:'medium'}}</td>
+            <td>{{data.shiftName}}</td>
+            <td>{{data.late_IN_Mint}}</td>
+            <td>{{data.early_OUT_Mint}}</td>
+          </tr>
+        </table>
+    </div> -->
+
+    <h4 style="text-align: center;">YOUR RECENT ACTIVITY</h4> 
+    <div class="containers table-responsive">
+                 
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Check In</th>
+            <th>Check Out</th>
+            <th>Shift</th>
+            <th>Late Remarks</th>
+            <th>Early Remarks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let data of attendanceListData;">
+            <td>{{data.inTime | date:'d-MMM-y, h:mm a'}}</td>
+            <td>{{data.outTime | date:'d-MMM-y, h:mm a'}}</td>
+            <td>{{data.shiftName}}</td>
+            <td>{{data.late_IN_Mint}}</td>
+            <td>{{data.early_OUT_Mint}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+   
+</ion-content>

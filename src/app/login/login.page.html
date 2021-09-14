@@ -1,0 +1,54 @@
+<!-- <img src="../../../assets/dypatil.png" alt="No-Image" /> -->
+<ion-content class="background-image">
+    <!-- <div class="top"><img src="../../assets/image/collegeclass.jpg"></div> -->
+    <!-- <div class="maindiv"></div> -->
+    <!-- <div class="dypatillogo"><img class="isssss" src="../../assets/icon/dylogo.png" alt="No-Image" /></div> -->
+    <!-- <h2 class="welcome">welcome</h2> -->
+    <!-- <img src="../../assets/image/Welcome.gif"> -->
+    <!-- <div class="logo"><img class="imagessssssss" src="../../assets/image/collegeclassgreen.jpg" alt="No-Image" /></div> -->
+    <div class="studentimage"><img class="gif" src="../../assets/image/logo.png"></div>
+    <div class="credential">
+
+
+
+        <div class="matdiv">
+            <mat-form-field floatLabel="auto" appearance="outline" class="loginform">
+                <mat-label>Employee ID</mat-label>
+                <input [(ngModel)]="EmpID" required matInput required>
+                <!-- <mat-icon  matSuffix>perm_identity</mat-icon> -->
+
+            </mat-form-field>
+        </div>
+        <div class="matdiv matdivphone">
+            <mat-form-field floatLabel="auto" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input [(ngModel)]="Password" required matInput required>
+                <!-- <mat-icon matSuffix>settings_phone</mat-icon> -->
+
+            </mat-form-field>
+        </div>
+
+
+
+
+
+
+        <div class="rememberdiv">
+            <ion-item class="ionitem ion-no-margin" lines="none">
+                <ion-label class="resetpassword" (click)="resetPassword()">Reset Password</ion-label>
+                <!-- <ion-checkbox slot="end" [(ngModel)]="chb_Remember"></ion-checkbox> -->
+            </ion-item>
+        </div>
+
+        <!-- <div class="reset-pass">
+            <p>Please enter Employee Id</p>
+        </div> -->
+
+    </div>
+
+    <ion-fab vertical="end" horizontal="center" (click)="GetDevice()">
+        <ion-fab-button class="headblue">
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</ion-content>

@@ -1,0 +1,83 @@
+
+<ion-header class="">
+  <ion-toolbar class="headblue">
+      <ion-item class="headblue" lines="none">
+          <ion-buttons>
+              <ion-menu-button class="menubtn" menu="first"></ion-menu-button>
+          </ion-buttons>
+          <ion-title>Profile</ion-title>
+          <!-- <div class="profileheader">
+              <ion-icon class="headicon1" slot="end"
+                  name="notifications-outline" (click)="openNotifications()"></ion-icon>
+          </div> -->
+      </ion-item>
+  </ion-toolbar>
+</ion-header>
+  
+  <ion-content class="" [fullscreen]="true">
+    <div class="bg-dashboard">
+      <div>
+          <ion-avatar class="image-center" *ngIf="!profiledata.profilePic">
+              <img src="assets/image/profile.png">
+          </ion-avatar>
+          <ion-avatar class="image-center" *ngIf="profiledata.profilePic">
+              <img src="{{profiledata.profilePic}}">
+          </ion-avatar>
+          <h2> {{ profiledata.empName }}</h2>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="6">
+                <p>EmpCode:</p>
+              </ion-col>
+              <ion-col size="6">
+                <p class="p-tg">{{profiledata.empCode}}</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="6">
+                <p>Designation:</p>
+              </ion-col>
+              <ion-col size="6">
+                <p class="p-tg">{{profiledata.degignation}}</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="6">
+                <p>Department:</p>
+              </ion-col>
+              <ion-col size="6">
+                <p class="p-tg">{{profiledata.department}}</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="6">
+                <p>Contact:</p>
+              </ion-col>
+              <ion-col size="6">
+                <p class="p-tg">{{profiledata.contactNo}}</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="6">
+                <p>Employee Type:</p>
+              </ion-col>
+              <ion-col size="6">
+                <p class="p-tg">{{profiledata.emptype}}</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="6">
+                <p>Gender:</p>
+              </ion-col>
+              <ion-col size="6">
+                <p class="p-tg">{{profiledata.gender}}</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+            
+             
+          </div>
+  </div>
+      
+  </ion-content>
+  

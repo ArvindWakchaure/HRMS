@@ -1,0 +1,64 @@
+<ion-content>
+<ion-item lines="full" (click)="dismiss()">
+    
+  
+  <ion-icon slot="end" name="close-outline"></ion-icon>
+
+  <ion-label>
+    <h2 >Demand Deatils</h2>        
+  </ion-label>
+</ion-item>
+
+<div class="table-responsiveness">
+  <table class="tables">
+    <thead>
+      <tr>
+        <th>Description	</th>
+        <!-- <th>Month</th> -->
+        <th>Gross</th>
+        <th>Disc Amt</th>
+        <th>Paid Amt</th>
+        <th>Due Amt</th>       
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr>
+        <td colspan="6">{{Demanddetail}}</td>
+      </tr> -->
+      <tr *ngFor="let demandetail of Demanddetail">          
+        <td>{{demandetail.description}}</td>     
+        <!-- <td></td>    -->
+        <td> {{demandetail.fee}}</td>
+        <td> {{demandetail.discountAmt}}</td>
+        <td> {{demandetail.paidAmt}}</td>
+        <td> {{demandetail.fee-(demandetail.discountAmt+demandetail.paidAmt)}}</td>                
+      </tr>
+      <!-- <tr >          
+        <td></td>     
+        <td></td>   
+        <td></td>
+        <td></td>
+        <td>Total :  </td>
+        <td>₹ {{TotalPayble}} </td>                
+      </tr> -->
+      <!-- <tr>      
+        <td>Tution Fee</td>
+        <td>
+          Feb
+        </td>      
+        <td>100</td>
+        <td>500</td>
+        <td>800</td>
+        <td>2000</td>
+     
+       
+      </tr> -->
+    </tbody>
+  </table>
+  <ion-item lines="none">
+    <ion-badge slot="end">Total : ₹ {{TotalPayble}}</ion-badge>
+  </ion-item>
+</div>
+
+<!-- <h1>this is {{foo}} {{bar}}</h1> -->
+</ion-content>

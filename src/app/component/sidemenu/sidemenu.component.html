@@ -1,0 +1,57 @@
+<ion-app>
+  <ion-menu side="start" menuId="first" contentId="menu">
+
+    <div class="profile-image"   *ngFor="let profile of profiledata">
+      <div class="ava">
+        <ion-avatar>
+          <img src='{{ImageResize(profile.proImg)}}' alt="No Image" height="40px" width="40px">
+        </ion-avatar>
+      </div>
+      <div class="profileinfo"  *ngFor="let profile of profiledata">
+        <div id="name">
+          {{profile.studentName}}
+          {{sidemenu.name}}
+        </div>
+        <div id="roll">
+          Class:&nbsp;{{profile.courseName}}&nbsp;{{profile.sectionName}}&nbsp;({{profile.studentCode}})
+        </div>
+      </div>
+     
+    </div>
+   
+    <ion-content>
+      <ion-menu-toggle auto-hide="true">
+        <ion-list class="dark">
+          <ion-item lines="none" *ngFor="let Menu of menuList" routerLink="{{Menu.pageRoute}}" class="ionItem">
+
+            
+            <ion-icon class="Icon" name="{{Menu.sideIcons}}"></ion-icon>
+            
+            <ion-label>{{Menu.menuName}}</ion-label>
+
+            <ion-icon class="Icon" name="chevron-forward-outline"></ion-icon>
+          </ion-item>
+          
+          <ion-item lines="none" (click)="Logout()" class="ionItem">
+            <ion-icon class="Icon" name="exit-outline"></ion-icon>
+            <ion-label>LogOut</ion-label>
+          </ion-item>
+
+        </ion-list>
+      </ion-menu-toggle>
+
+
+      <div class="appDetail">
+        APP Version : 4.0
+      </div>
+    </ion-content>
+
+  </ion-menu>
+
+
+  <ion-router-outlet Id="menu"></ion-router-outlet>
+
+
+  
+  
+</ion-app>

@@ -1,0 +1,78 @@
+<!-- <ion-app>
+  <ion-router-outlet></ion-router-outlet>
+</ion-app> -->
+<ion-app>
+    <ion-menu side="start" menuId="first" contentId="menu">
+
+        <div class="profile-image" *ngIf="profiledata.lenght != 0">
+            <div *ngFor="let profile of profiledata">
+              <ion-avatar class="image-center" *ngIf="!profile.profilePic">
+                <img src="assets/image/profile.png">
+            </ion-avatar>
+            <ion-avatar class="image-center" *ngIf="profile.profilePic">
+                <img src="{{profile.profilePic}}">
+            </ion-avatar>
+
+                <h2> {{profile.empName}}</h2>
+                <!-- <p>Class:&nbsp;{{profile.courseName}}&nbsp;{{profile.sectionName}}&nbsp;({{profile.studentCode}})</p> -->
+            </div>
+        </div>
+        <!-- <div class="profile-image"   *ngFor="let profile of profiledata">
+      <div class="ava">
+        <ion-avatar>
+          <img src='{{ImageResize(profile.proImg)}}' alt="No Image" height="40px" width="40px">
+        </ion-avatar>
+      </div>
+      <div class="profileinfo"  *ngFor="let profile of profiledata">
+        <div id="name">
+          {{profile.studentName}}
+        </div>
+        <div id="roll">
+          Class:&nbsp;{{profile.courseName}}&nbsp;{{profile.sectionName}}&nbsp;({{profile.studentCode}})
+        </div>
+      </div>
+     
+    </div> -->
+
+        <ion-content>
+            <ion-menu-toggle auto-hide="true">
+                <ion-list class="dark">
+                    <ion-item lines="none" *ngFor="let Menu of menuList" routerLink="{{Menu.pageRoute}}" class="ionItem">
+                        <!-- <ion-icon class="Icon" name="{{Menu.sideIcons}}"></ion-icon> -->
+                        <img class="appcomimage" src="{{Menu.icons}}">
+                        <ion-label>{{Menu.menuName}}</ion-label>
+                        <ion-icon class="Icon" name="chevron-forward-outline"></ion-icon>
+                    </ion-item>
+
+                    <ion-item lines="none" (click)="LogoutConfirm()" class="ionItem">
+                        <ion-icon class="Icon" name="exit-outline"></ion-icon>
+                        <ion-label>Logout</ion-label>
+                    </ion-item>
+                    <ion-item lines="none" id="appversion">
+                        <!-- <ion-label> <i>APP Version : 4.0</i></ion-label> -->
+                    </ion-item>
+                </ion-list>
+            </ion-menu-toggle>
+
+            <!-- <ion-item >
+        <ion-label slot="end">
+          <h2 >  APP Version : 4.0</h2>
+          <h1>  powred By DotPlus Technologies Pvt Ltd</h1>
+        </ion-label>
+      </ion-item> -->
+            <div class="appDetail">
+                <a href="https://dotplus.in" target="_blank"> Powered By <strong> DotPlus Technologies Pvt. Ltd</strong></a>
+
+            </div>
+
+        </ion-content>
+
+    </ion-menu>
+
+
+    <ion-router-outlet Id="menu"></ion-router-outlet>
+
+
+
+
+</ion-app>

@@ -1,0 +1,73 @@
+****NOTE: use "sudo" before command**********
+****Run second command only once first time*******
+
+
+1) ionic cordova build --release android
+
+2) keytool -genkey -v -keystore my-release-key.keystore -alias HRMSPlus -keyalg RSA -keysize 2048 -validity 10000
+
+
+password: password
+
+
+3) "/usr/lib/jvm/jdk1.8.0_261/bin/jarsigner" -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore "/home/arvind/Desktop/Ionic/HRMS_PLUS/my-release-key.keystore" "/home/arvind/Desktop/Ionic/HRMS_PLUS/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk" HRMSPLUS
+
+
+password: password
+
+
+4) "/home/arvind/Android/Sdk/build-tools/29.0.2/zipalign" -v 4 "/home/arvind/Desktop/Ionic/HRMS_PLUS/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk" HRMSPLUS.apk
+
+
+
+
+
+Enter keystore password:  
+Re-enter new password: 
+What is your first and last name?
+  [Unknown]:  Jayashree Papal
+What is the name of your organizational unit?
+  [Unknown]:  Queenzend Web Solution
+What is the name of your organization?
+  [Unknown]:  Queenzend Web Solution
+What is the name of your City or Locality?
+  [Unknown]:  Pune
+What is the name of your State or Province?
+  [Unknown]:  Maharashtra
+What is the two-letter country code for this unit?
+  [Unknown]:  +91
+Is CN=Jayashree Papal, OU=Queenzend Web Solution, O=Queenzend Web Solution, L=Pune, ST=Maharashtra, C="+91" correct?
+  [no]:  y
+
+Generating 2,048 bit RSA key pair and self-signed certificate (SHA256withRSA) with a validity of 10,000 days
+	for: CN=Jayashree Papal, OU=Queenzend Web Solution, O=Queenzend Web Solution, L=Pune, ST=Maharashtra, C="+91"
+[Storing my-release-key.keystore]
+
+****************************************************************
+
+New play store policy for upload App Bundle on play store console
+
+1) Make sure Target API level is 30 in platforms/android/build.gradle file and platforms/android/project.properties file.
+
+
+2) sudo ionic cordova build --release android
+
+
+3) sudo keytool -genkey -v -keystore my-release-key.keystore -alias HRMSPlus -keyalg RSA -keysize 2048 -validity 10000
+
+
+4) sudo ionic cordova build android
+
+
+5) cd platforms/android
+
+
+6) sudo ./gradlew bundle         (This creates app.aab file which is unsigned)
+
+
+7) sudo "/usr/lib/jvm/jdk1.8.0_261/bin/jarsigner" -keystore "/home/arvind/Desktop/Ionic/HRMS_PLUS/my-release-key.keystore" "/home/arvind/Desktop/Ionic/HRMS_PLUS/platforms/android/app/build/outputs/bundle/release/app.aab" HRMSPLUS
+
+password : password
+
+
+and now app.aab file is signed and ready to upload playstore

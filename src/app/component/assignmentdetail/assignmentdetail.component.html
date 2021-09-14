@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-item lines="none">
+      <ion-back-button defaultHref="dashboard"></ion-back-button>
+      <!-- <ion-buttons slot="start">
+        <ion-back-button defaultHref="dashboard"></ion-back-button>
+      </ion-buttons> -->
+      <!-- <ion-icon routerLink="../../mainpage" class="font" name="arrow-back" slot="start"></ion-icon> -->
+      <ion-title color="secondary">See All assignment</ion-title>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <!-- <div class="card">
+    <ion-grid  color="mycolor" class="grid" *ngFor="let sub of assignment">
+     
+      <div class="mainrow">     
+         
+        <div class="div">
+        <div class="subject ">{{sub.subjectName}}</div>    
+        <div class="detailsrow">
+          <div class="card" *ngFor="let subject of sub.detail">
+           
+            <div class="newdiv">            
+              <div class="labels">
+                <label class="label">{{subject.edate  | date : 'dd-MMM-yyyy'}}</label>              
+              </div>           
+              <div class="topic">
+               <div  class="topicnamess"> {{subject.topicName}}</div>
+               <div class="topicnames" > 
+                <a  color="medium" target="_blank" href="{{subject.docLink}}" class="btn">        
+                             
+                  View
+                </a>
+              </div>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>   
+      
+    </ion-grid>
+  </div> -->
+  <div  *ngFor="let sub of assignment">
+    <div  *ngFor="let subject of sub.detail">
+      <div class="main">
+        <div class="topicname">{{sub.subjectName}}</div>
+        <div class="topicsub">{{subject.topicName}}</div>
+        <div class="topictitle">{{subject.title}}</div>
+        <div class="maindiv">
+        <div class="date">{{subject.edate  | date : 'dd-MMM-yyyy'}}</div>
+        <div class="time">{{subject.edate | date : 'hh:mm a'}}</div>
+        <div class="linksss" > 
+          <a  color="medium" target="_blank" href="{{subject.docLink}}" class="btn">        
+                       
+            View
+          </a>
+        </div>
+        </div>
+        
+      </div>
+  
+    </div>
+  </div>
+  
+</ion-content>

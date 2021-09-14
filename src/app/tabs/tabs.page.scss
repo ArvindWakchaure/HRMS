@@ -1,0 +1,37 @@
+* {
+    font-family: 'Poppins-Regular';
+}
+ion-tab-bar {
+    --background: #007c9d;
+ }
+ ion-label {
+     color: #fff;
+     font-size: 11px;
+ }
+
+ ion-icon {
+    color: #fff;
+    font-size: 30px;
+ }
+
+ ion-tab-button[aria-selected = true] {
+    height: 100px;
+    // background: red !important;
+ }
+ ion-fab-button {
+    margin: 18px -3px !important;
+    border-radius: 50px;
+    border: 4px solid white !important; 
+   //  --background: #297c9d;
+ }
+ .check-out {
+   // --background: #de2d16;
+   color: #de2d16;
+ }
+ .check-in {
+   // --background: #5ff30b;
+   color: #5ff30b;
+ }
+ .fa {
+    font-size: 24px;
+ }
